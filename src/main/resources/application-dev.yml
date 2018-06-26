@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://localhost:3306/bike
+    username: root
+    password: root
+
+  #activeMQ
+  activemq:
+    broker-url: tcp://localhost:61616
+
+#springdata
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/bike
+
+#redis
+redis:
+  host: 127.0.0.1
+  port: 6379
+  max-idle: 5
+  max-total: 10
+  max-wait-millis: 3000
+
