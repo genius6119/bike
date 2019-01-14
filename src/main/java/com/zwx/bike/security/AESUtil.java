@@ -52,40 +52,40 @@ public class AESUtil {
         }
         return  null;
     }
-//
-//    public static void main(String[] args) throws Exception {
-//        /**
-//         *@Author Zhang
-//         *@Date 2018/2/12 18:46
-//         *@Description AES加密数据
-//         */
-//        String key="123456789abcdefg";
-//        String dataToEn="{'mobile':'17805056119','code':'6666','platform':'android','channelId':'123456'}";
-//        String enResult=encrypt(dataToEn,key);
-//        System.out.println(enResult);
-//
-//        /**
-//         *@Author Zhang
-//         *@Date 2018/2/12 18:47
-//         *@Description RSA 加密AES的密钥
-//         */
-//        byte[] enKey=RSAUtil.encryptByPublicKey(key.getBytes("UTF-8"),"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCHVIgyK7ip5iHhCVWF0I5ieESPvJCk96pIDvTKC+9LzybQqYvanDo96XxpI8B1aDHxhKF8rtRnRxJFBhl0 k58682XdOVTRtY8lYJrHQOIrWHqIahFoKdbfH3yH7cOw3Ny6XaRgL3atHS7U8cGEtzf9wSG8gpi3w5IleOKwcRTjvwIDAQAB");
-////        System.out.println(new String(enKey,"UTF-8"));
-//        String baseKey=Base64Util.encode(enKey);
-//        System.out.println(baseKey);
-//        /**
-//         *@Author Zhang
-//         *@Date 2018/2/12 18:54
-//         *@Description 服务端RSA解密AES的key得到lastKey,再用这个lastKey解密
-//         */
-////        byte[] de=Base64Util.decode(baseKey);
-////        byte[] deKeyResult=RSAUtil.decryptByPrivateKey(de);
-////        String lastKey=new String(deKeyResult,"UTF-8");
-////        System.out.println(lastKey);
-////        String deResult=decrypt(enResult,lastKey);
-////        System.out.println(deResult);
-//
-//
-//    }
+
+    public static void main(String[] args) throws Exception {
+        /**
+         *@Author Zhang
+         *@Date 2018/2/12 18:46
+         *@Description AES加密数据
+         */
+        String key="123456789abcdefg";
+        String dataToEn="{'mobile':'17805056119','code':'6666','platform':'android','channelId':'123456'}";
+        String enResult=encrypt(dataToEn,key);
+        System.out.println(enResult);
+
+        /**
+         *@Author Zhang
+         *@Date 2018/2/12 18:47
+         *@Description RSA 加密AES的密钥
+         */
+        byte[] enKey=RSAUtil.encryptByPublicKey(key.getBytes("UTF-8"),"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCHVIgyK7ip5iHhCVWF0I5ieESPvJCk96pIDvTKC+9LzybQqYvanDo96XxpI8B1aDHxhKF8rtRnRxJFBhl0 k58682XdOVTRtY8lYJrHQOIrWHqIahFoKdbfH3yH7cOw3Ny6XaRgL3atHS7U8cGEtzf9wSG8gpi3w5IleOKwcRTjvwIDAQAB");
+//        System.out.println(new String(enKey,"UTF-8"));
+        String baseKey=Base64Util.encode(enKey);
+        System.out.println(baseKey);
+        /**
+         *@Author Zhang
+         *@Date 2018/2/12 18:54
+         *@Description 服务端RSA解密AES的key得到lastKey,再用这个lastKey解密
+         */
+//        byte[] de=Base64Util.decode(baseKey);
+//        byte[] deKeyResult=RSAUtil.decryptByPrivateKey(de);
+//        String lastKey=new String(deKeyResult,"UTF-8");
+//        System.out.println(lastKey);
+//        String deResult=decrypt(enResult,lastKey);
+//        System.out.println(deResult);
+
+
+    }
 
 }

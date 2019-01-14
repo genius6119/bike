@@ -97,19 +97,19 @@ public class RSAUtil {
 
 
     public static void main(String[] args) throws Exception {
-//        KeyPairGenerator keyPairGenerator=KeyPairGenerator.getInstance(KEY_ALGORITHM);
-//        keyPairGenerator.initialize(1024);
-//        KeyPair keyPair=keyPairGenerator.generateKeyPair();
-//        PublicKey publicKey=keyPair.getPublic();
-//        PrivateKey privateKey=keyPair.getPrivate();
-//        System.out.println(Base64Util.encode(publicKey.getEncoded()));
-//        System.out.println(Base64Util.encode(privateKey.getEncoded()));
+        KeyPairGenerator keyPairGenerator=KeyPairGenerator.getInstance(KEY_ALGORITHM);
+        keyPairGenerator.initialize(1024);
+        KeyPair keyPair=keyPairGenerator.generateKeyPair();
+        PublicKey publicKey=keyPair.getPublic();
+        PrivateKey privateKey=keyPair.getPrivate();
+        System.out.println(Base64Util.encode(publicKey.getEncoded()));
+        System.out.println(Base64Util.encode(privateKey.getEncoded()));
 
-        String data ="老张";
-        byte[] enResult=encryptByPublicKey(data.getBytes("UTF-8"),PUBLIC_KEY);
-        System.out.println(enResult.toString());
-        byte[] result = decryptByPrivateKey(enResult);
-        System.out.println(new String(result,"UTF-8"));
+//        String data ="老张";
+//        byte[] enResult=encryptByPublicKey(data.getBytes("UTF-8"),PUBLIC_KEY);
+//        System.out.println(enResult.toString());
+//        byte[] result = decryptByPrivateKey(enResult);
+//        System.out.println(new String(result,"UTF-8"));
 
 
 
