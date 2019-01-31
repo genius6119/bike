@@ -9,11 +9,13 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 
 @SpringBootApplication
 @EnableTransactionManagement
 @PropertySource(value = "classpath:parameter.properties")
-
+@EnableSwagger2
 public class BikeApplication {
 
 	public static void main(String[] args) {

@@ -12,10 +12,7 @@ import com.zwx.bike.user.entity.UserElement;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,7 +35,7 @@ public class RideRecordController extends BaseController {
      * 查询骑行历史 分页
      */
 
-    @RequestMapping("/list/{id}")
+    @RequestMapping(value = "/list/{id}",method = RequestMethod.POST)
     public ApiResult<List<RideRecord>> listRideRecord(@PathVariable("id") Long lastId){
 
         ApiResult<List<RideRecord>> resp = new ApiResult<>();

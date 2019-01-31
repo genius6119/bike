@@ -63,7 +63,7 @@ public class UserController extends BaseController{
      * @Date 2018/3/16 13:47
      * @Description 修改用户昵称
      */
-    @RequestMapping("/modifyNickName")
+    @RequestMapping(value = "/modifyNickName",method = RequestMethod.POST)
     public ApiResult modifyNickName(@RequestBody User user){
         ApiResult resp=new ApiResult();
         try{
@@ -87,7 +87,7 @@ public class UserController extends BaseController{
      * @Date 2018/3/26 18:56
      * @Description   发送验证码
      */
-    @RequestMapping("/sendVercode")
+    @RequestMapping(value = "/sendVercode",method = RequestMethod.POST)
     public ApiResult sendVercode(@RequestBody User user, HttpServletRequest request){
         ApiResult resp=new ApiResult();
         try{
