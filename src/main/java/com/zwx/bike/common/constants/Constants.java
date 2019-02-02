@@ -25,7 +25,9 @@ public class Constants {
 
     public static final String MDSMS_REST_URL="https://api.miaodiyun.com/20150822";
 
-    public static final String MDSMS_VERCODE_TPLID="199714035";
+//    public static final String MDSMS_VERCODE_TPLID="199714035";//佳驰网络
+
+    public static final String MDSMS_VERCODE_TPLID="1225862372";//地信科技
 
     /**七牛云存储*/
 

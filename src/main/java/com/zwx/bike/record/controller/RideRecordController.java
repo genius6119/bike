@@ -9,6 +9,7 @@ import com.zwx.bike.common.rest.BaseController;
 import com.zwx.bike.record.entity.RideRecord;
 import com.zwx.bike.record.service.RideRecordService;
 import com.zwx.bike.user.entity.UserElement;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -36,6 +37,7 @@ public class RideRecordController extends BaseController {
      */
 
     @RequestMapping(value = "/list/{id}",method = RequestMethod.POST)
+    @ApiOperation(value = "查询骑行历史(分页)", notes = "")
     public ApiResult<List<RideRecord>> listRideRecord(@PathVariable("id") Long lastId){
 
         ApiResult<List<RideRecord>> resp = new ApiResult<>();

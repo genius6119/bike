@@ -8,6 +8,7 @@ import com.zwx.bike.user.entity.LoginInfo;
 import com.zwx.bike.user.entity.User;
 import com.zwx.bike.user.entity.UserElement;
 import com.zwx.bike.user.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,7 @@ public class UserController extends BaseController{
      * @Date 2018/2/26 18:57
      * @Description  用户登录
      */
+    @ApiOperation(value = "用户登录", notes = "")
     @RequestMapping(value = "/login",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
     public ApiResult<String> login(@RequestBody LoginInfo loginInfo) {
 
@@ -63,6 +65,7 @@ public class UserController extends BaseController{
      * @Date 2018/3/16 13:47
      * @Description 修改用户昵称
      */
+    @ApiOperation(value = "修改用户昵称", notes = "")
     @RequestMapping(value = "/modifyNickName",method = RequestMethod.POST)
     public ApiResult modifyNickName(@RequestBody User user){
         ApiResult resp=new ApiResult();
@@ -88,6 +91,7 @@ public class UserController extends BaseController{
      * @Description   发送验证码
      */
     @RequestMapping(value = "/sendVercode",method = RequestMethod.POST)
+    @ApiOperation(value = "发送验证码", notes = "")
     public ApiResult sendVercode(@RequestBody User user, HttpServletRequest request){
         ApiResult resp=new ApiResult();
         try{
@@ -109,6 +113,7 @@ public class UserController extends BaseController{
      * @Description 更改头像
      */
     @RequestMapping(value = "/uploadHeadImg", method = RequestMethod.POST)
+    @ApiOperation(value = "修改用户头像", notes = "")
     public ApiResult<String> uploadHeadImg(HttpServletRequest req, @RequestParam(required=false ) MultipartFile file) {
 
         ApiResult<String> resp = new ApiResult<>();

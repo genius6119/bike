@@ -65,7 +65,7 @@ public class BikeController extends BaseController {
     /**
      * 查询附近单车
      */
-    @ApiOperation(value = "根据用户编号获取用户姓名", notes = "test: 仅1和2有正确返回")
+    @ApiOperation(value = "按照当前经纬度查询附件单车", notes = "")
     @RequestMapping(value = "/findAroundBike",method = RequestMethod.POST)
     public ApiResult findAroundBike(@RequestBody Point point) {
 
@@ -89,6 +89,7 @@ public class BikeController extends BaseController {
     /**
      * 解锁单车
      */
+    @ApiOperation(value = "解锁单车", notes = "")
     @RequestMapping(value = "/unLockBike",method = RequestMethod.POST)
     public ApiResult unLockBike(@RequestBody Bike bike) {
 
@@ -114,6 +115,7 @@ public class BikeController extends BaseController {
      */
 
     @RequestMapping(value = "/lockBike",method = RequestMethod.POST)
+    @ApiOperation(value = "骑完单车锁定单车", notes = "")
     public ApiResult lockBike(@RequestBody BikeLocation bikeLocation) {
 
         ApiResult<List<BikeLocation>> resp = new ApiResult<>();
@@ -136,6 +138,7 @@ public class BikeController extends BaseController {
      * 单车上报坐标
      */
     @RequestMapping(value = "/reportLocation",method = RequestMethod.POST)
+    @ApiOperation(value = "单车上报坐标(每5秒)", notes = "")
     public ApiResult reportLocation(@RequestBody BikeLocation bikeLocation) {
 
         ApiResult<List<BikeLocation>> resp = new ApiResult<>();
@@ -158,6 +161,7 @@ public class BikeController extends BaseController {
      * 按订单号查询轨迹
      */
     @RequestMapping(value = "/rideContrail",method = RequestMethod.POST)
+    @ApiOperation(value = "按订单号查询轨迹", notes = "")
     public ApiResult rideContrail(@RequestBody RideContrail rideContrail) {
 
         ApiResult<List<RideContrail>> resp = new ApiResult<>();
