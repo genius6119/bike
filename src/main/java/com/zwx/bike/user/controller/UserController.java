@@ -132,4 +132,25 @@ public class UserController extends BaseController{
         return resp;
     }
 
+    @RequestMapping(value = "/getUserInfo",method = RequestMethod.GET)
+    public ApiResult<User> getWalletInfo(){
+        ApiResult<User> resp=new ApiResult<>();
+        UserElement ue=getCurrentUser();
+
+        if(ue == null){
+            resp.setCode(Constants.RESP_STATUS_NOAUTH);
+            resp.setMessage("请登录");
+            return resp;
+        }
+
+        try {
+            resp.setData(userService.selectById(ue.getUserId()));
+            resp.setMessage("获取成功");
+        }catch (Exception e){
+            log.error("获取钱包信息异常",e);
+        }
+
+        return resp;
+    }
+
 }

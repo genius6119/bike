@@ -24,4 +24,5 @@ public interface UserMapper {
      * @return
      */
     User selectByMobile(String mobile);
+
 }

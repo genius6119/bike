@@ -15,4 +15,6 @@ public interface UserService {
     void sendVercode(String mobile, String ip) throws BikeException;
 
     String  uploadHeadImg(MultipartFile file, Long id) throws BikeException;
+
+    User selectById(Long id);
 }

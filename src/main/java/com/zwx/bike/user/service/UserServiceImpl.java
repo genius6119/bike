@@ -160,6 +160,11 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public User selectById(Long id) {
+        return userMapper.selectByPrimaryKey(id);
+    }
+
 
     /**
      * 生成token方法 md5加密

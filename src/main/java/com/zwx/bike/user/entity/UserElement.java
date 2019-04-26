@@ -28,7 +28,6 @@ public class UserElement {
      */
     public Map<String, String> toMap() {
         Map<String, String> map = new HashMap<String, String>();
-        map.put("platform", this.platform);
         map.put("userId", this.userId + "");
         map.put("token", token);
         map.put("mobile", mobile);
@@ -37,6 +36,9 @@ public class UserElement {
         }
         if (this.pushChannelId != null) {
             map.put("pushChannelId", this.pushChannelId);
+        }
+        if(this.platform != null){
+            map.put("platform", this.platform);
         }
         return map;
     }
