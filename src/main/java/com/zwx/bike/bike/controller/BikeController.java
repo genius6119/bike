@@ -71,7 +71,7 @@ public class BikeController extends BaseController {
 
         ApiResult<List<BikeLocation>> resp = new ApiResult<>();
         try {
-            List<BikeLocation> bikeList = bikeGeoService.geoNear("bike-position", null, point, 10, 500);
+            List<BikeLocation> bikeList = bikeGeoService.geoNear("bike-position", null, point, 10, 1000000);
             resp.setMessage("查询附近单车成功");
             resp.setData(bikeList);
         } catch (BikeException e) {

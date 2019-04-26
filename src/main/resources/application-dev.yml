@@ -7,16 +7,16 @@ spring:
 
   #activeMQ
   activemq:
-    broker-url: tcp://localhost:61616
+    broker-url: tcp://47.93.236.80:61616
 
 #springdata
   data:
     mongodb:
-      uri: mongodb://localhost:27017/bike
+      uri: mongodb://47.93.236.80:27017/bike
 
 #redis
 redis:
-  host: 127.0.0.1
+  host: 47.93.236.80
   port: 6379
   max-idle: 5
   max-total: 10

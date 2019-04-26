@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService {
             String code=jsonObject.getString("code");
             String platform=jsonObject.getString("platform");
             String channelId = jsonObject.getString("channelId");//推送频道编码 单个设备唯一
-            if(StringUtils.isBlank(mobile)||StringUtils.isBlank(code)||StringUtils.isBlank(platform)||StringUtils.isBlank(channelId)){
+            if(StringUtils.isBlank(mobile)||StringUtils.isBlank(code)||StringUtils.isBlank(channelId)){
                 throw new Exception();
             }
             /**

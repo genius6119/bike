@@ -60,7 +60,7 @@ public class AESUtil {
          *@Description AES加密数据
          */
         String key="123456789abcdefg";
-        String dataToEn="{'mobile':'17805056119','code':'6666','platform':'android','channelId':'123456'}";
+        String dataToEn="{\"channelId\":\"MTc4MDUwNTYxMTk\\u003d\",\"code\":\"6666\",\"mobile\":\"17805056119\",\"plantform\":\"Android\"}";
         String enResult=encrypt(dataToEn,key);
         System.out.println(enResult);
 

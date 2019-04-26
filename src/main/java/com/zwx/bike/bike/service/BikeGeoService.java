@@ -99,6 +99,7 @@ public class BikeGeoService {
                 coordinates.toArray(temp);
                 location.setCoordinates(temp);
                 location.setDistance((Double) obj.get("distance"));
+
                 result.add(location);
             }
 
