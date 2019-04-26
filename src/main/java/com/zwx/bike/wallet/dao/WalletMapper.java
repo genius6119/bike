@@ -5,7 +5,6 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
 @Mapper
-
 public interface WalletMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -20,4 +19,6 @@ public interface WalletMapper {
     int updateByPrimaryKey(Wallet record);
 
     Wallet selectByUserId(Long userId);
+
+
 }
