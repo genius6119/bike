@@ -121,7 +121,7 @@ public class BikeServiceImpl implements BikeService {
             /**6*/
             RideRecord rideRecord = new RideRecord();
             rideRecord.setBikeNo(bikeNo);
-            String recordNo = new Date().getTime() + System.currentTimeMillis() + RandomNumberCode.randomNo();     /**生成唯一订单记录*/
+            String recordNo =System.currentTimeMillis() + RandomNumberCode.randomNo();     /**生成唯一订单记录*/
             rideRecord.setRecordNo(recordNo);
             rideRecord.setStartTime(new Date());
             rideRecord.setUserid(currentUser.getUserId());
