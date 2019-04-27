@@ -6,6 +6,7 @@ import com.zwx.bike.common.constants.Constants;
 import com.zwx.bike.common.exception.BikeException;
 import com.zwx.bike.common.resp.ApiResult;
 import com.zwx.bike.common.rest.BaseController;
+import com.zwx.bike.record.entity.RideContrail;
 import com.zwx.bike.record.entity.RideRecord;
 import com.zwx.bike.record.service.RideRecordService;
 import com.zwx.bike.user.entity.UserElement;
@@ -53,6 +54,25 @@ public class RideRecordController extends BaseController {
             log.error("Fail to query ride record ", e);
             resp.setCode(Constants.RESP_STATUS_INTERNAL_ERROR);
             resp.setMessage("内部错误");
+        }
+
+        return resp;
+    }
+
+    /**
+     * 查询轨迹
+     */
+    @RequestMapping("/contrail/{recordNo}")
+    public ApiResult<RideContrail> rideContrail(@PathVariable("recordNo") String recordNo){
+
+        ApiResult<RideContrail> resp = new ApiResult<>();
+        try {
+            UserElement ue = getCurrentUser();
+            RideContrail contrail = bikeGeoService.rideContrail("ride_contrail",recordNo);
+            resp.setData(contrail);
+            resp.setMessage("查询成功");
+        } catch (BikeException e) {
+            log.error("查询轨迹异常",e);
         }
 
         return resp;
