@@ -15,4 +15,6 @@ public interface BikeService {
     void lockBike(BikeLocation number) throws BikeException;
 
     void reportLocation(BikeLocation bikeLocation) throws BikeException;
+
+    Integer queryBikeStatus(String collection, Long number);
 }

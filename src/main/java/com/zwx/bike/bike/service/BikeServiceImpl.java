@@ -236,5 +236,15 @@ public class BikeServiceImpl implements BikeService {
 
     }
 
+    @Override
+    public Integer queryBikeStatus(String collection, Long number) {
+
+        DBObject obj = mongoTemplate.getCollection(collection).
+                findOne(new BasicDBObject("bike_no", number));
+
+        Integer a = (Integer) obj.get("status");
+
+        return a;
+    }
 
 }

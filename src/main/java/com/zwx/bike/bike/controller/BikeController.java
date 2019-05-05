@@ -180,4 +180,24 @@ public class BikeController extends BaseController {
 
         return resp;
     }
+
+    /**
+     *
+     * 查询单车状态
+     */
+    @RequestMapping(value = "/queryBikeStatus",method = RequestMethod.POST)
+    @ApiOperation(value = "查询单车状态", notes = "")
+    public ApiResult queryBikeStatus(@RequestBody Bike bike){
+
+        ApiResult<Integer> resp = new ApiResult<>();
+
+        Integer status = bikeService.queryBikeStatus("bike-position",bike.getNumber());
+
+        resp.setData(status);
+
+        return resp;
+
+    }
+
+
 }
