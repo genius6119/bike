@@ -65,7 +65,7 @@ public class BikeController extends BaseController {
     /**
      * 查询附近单车
      */
-    @ApiOperation(value = "按照当前经纬度查询附件单车", notes = "")
+    @ApiOperation(value = "查询附近单车", notes = "")
     @RequestMapping(value = "/findAroundBike",method = RequestMethod.POST)
     public ApiResult findAroundBike(@RequestBody Point point) {
 

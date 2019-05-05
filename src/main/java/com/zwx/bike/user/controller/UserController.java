@@ -133,7 +133,8 @@ public class UserController extends BaseController{
     }
 
     @RequestMapping(value = "/getUserInfo",method = RequestMethod.GET)
-    public ApiResult<User> getWalletInfo(){
+    @ApiOperation("获取用户信息")
+    public ApiResult<User> getUserInfo(){
         ApiResult<User> resp=new ApiResult<>();
         UserElement ue=getCurrentUser();
 

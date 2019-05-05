@@ -62,7 +62,8 @@ public class RideRecordController extends BaseController {
     /**
      * 查询轨迹
      */
-    @RequestMapping("/contrail/{recordNo}")
+    @RequestMapping(value = "/contrail/{recordNo}",method = RequestMethod.POST)
+    @ApiOperation(value = "骑行轨迹点坐标", notes = "")
     public ApiResult<RideContrail> rideContrail(@PathVariable("recordNo") String recordNo){
 
         ApiResult<RideContrail> resp = new ApiResult<>();

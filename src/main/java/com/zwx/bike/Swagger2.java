@@ -43,9 +43,9 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Zwx's Bike Interface Documentation")
-                .description("更多请关注http://www.baidu.com")
-                .termsOfServiceUrl("http://www.baidu.com")
-                .contact("sunf")
+                .description("更多请关注 http://www.zwxzzz.top/")
+                .termsOfServiceUrl("http://www.zwxzzz.top/")
+                .contact("Zwx")
                 .version("1.0")
                 .build();
     }

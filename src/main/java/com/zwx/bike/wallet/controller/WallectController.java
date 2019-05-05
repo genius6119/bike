@@ -6,6 +6,7 @@ import com.zwx.bike.common.rest.BaseController;
 import com.zwx.bike.user.entity.UserElement;
 import com.zwx.bike.wallet.entity.Wallet;
 import com.zwx.bike.wallet.service.WalletService;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -29,6 +30,7 @@ public class WallectController extends BaseController {
     private WalletService walletService;
 
     @RequestMapping(value = "/getUserWallet",method = RequestMethod.GET)
+    @ApiOperation("获取用户余额")
     public ApiResult<Wallet> getWalletInfo(){
         ApiResult<Wallet> resp=new ApiResult<>();
         UserElement ue=getCurrentUser();
