@@ -116,6 +116,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public void sendVercode(String mobile, String ip) throws BikeException {
         String verCode= RandomNumberCode.verCode();
+
+        cacheUtil.cache(mobile,verCode);
+
         int result=cacheUtil.cacheForVerificationCode(VERIFCODE_PREFIX+mobile,verCode,"reg",60,ip);
         /**校验*/
         if (result == 1) {
