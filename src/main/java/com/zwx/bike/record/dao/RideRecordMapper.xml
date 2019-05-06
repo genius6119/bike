@@ -44,7 +44,7 @@
     where userid = #{userId}
     AND id> #{lastId}
     AND status = 2
-    limit 10
+    limit 100
   </select>
   <insert id="insert" parameterType="com.zwx.bike.record.entity.RideRecord" >
     insert into ride_record (id, userid, record_no, 
